@@ -1,0 +1,4 @@
+subir o serviço backend
+
+docker-compose up --build
+

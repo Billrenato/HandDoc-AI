@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+transformers
+torch
+opencv-python
+Pillow
+sqlalchemy
+psycopg2-binary
+easyocr
+python-dotenv
