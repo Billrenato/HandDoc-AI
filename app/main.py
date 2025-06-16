@@ -1,13 +1,20 @@
 from fastapi import FastAPI, UploadFile, File, HTTPException, Depends
 from sqlalchemy.orm import Session
-from ocr import process_image
-from database import get_db, Base, engine
-import models
+from app import models
+from app.ocr import process_image
+from app.database import get_db, Base, engine
+import os
+import uuid
+
 
 # Inicializa as tabelas no banco, se ainda não existirem
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title="HandDoc AI")
+
+@app.get("/", summary="Healthcheck")
+def read_root():
+    return {"message": "HandDoc AI backend está rodando 🚀"}
 
 @app.post("/ocr/", summary="Realiza OCR em imagem e salva no banco")
 async def run_ocr_and_save(

@@ -1,4 +1,48 @@
-subir o serviço backend
 
+
+testar a api no cmd
+
+curl -X POST http://localhost:8000/ocr/ -H "Content-Type: multipart/form-data" -F "file=@\"C:\img.PNG\""
+
+
+
+subir o serviço backend
 docker-compose up --build
 
+docker-compose up
+
+Rodar em segundo plano (modo "detached")
+docker-compose up -d
+
+Ver os logs em tempo real
+docker-compose logs -f
+
+
+
+Parar os containers
+docker-compose down
+
+
+Parar e remover tudo, incluindo volumes (dados do banco)
+docker-compose down -v
+
+
+
+Rebuild manual (sem rodar)
+docker-compose build
+
+
+
+Ver containers em execução
+docker ps
+
+
+Acessar o terminal de um container
+docker exec -it handdoc-backend bash
+
+ou para o banco:
+docker exec -it handdoc-db bash
+
+
+Remover imagens antigas não usadas
+docker image prune -a
