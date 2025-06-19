@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # 📝 HandDoc AI – OCR Inteligente para Documentos Manuscritos
 
 [![Docker](https://img.shields.io/badge/docker-ready-blue?logo=docker)](https://www.docker.com/)
